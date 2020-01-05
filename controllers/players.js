@@ -1,7 +1,6 @@
 const asyncHandler = require('../middleware/async');
 const Player = require('../models/Player');
 
-
 //@desc   GET all players
 //@route  GET /api/v1/player
 //@access Public

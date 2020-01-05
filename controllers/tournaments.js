@@ -9,7 +9,8 @@ exports.getTournaments = asyncHandler(async (req, res) => {
 
   res
     .status(200)
-    .json({ success: true, count: tournament.length, data: tournament });
+    .json({ success: true, count: tournament.length, data: tournament })
+    .render('index')
 });
 
 //@desc   GET single tournament

@@ -3,7 +3,7 @@ const dotenv = require('dotenv');
 const morgan = require('morgan');
 const connectDB = require('./config/db');
 const cors = require('cors')
-
+const hb = require('./config/handlebars')
 const tournaments = require('./routes/tournaments');
 const players = require('./routes/players');
 const index = require('./routes/index')
@@ -17,8 +17,8 @@ connectDB();
 app.use(express.json());
 app.use(cors())
 
-
-app.set('view engine', 'pug')
+app.engine("hbs", hb);
+app.set("view engine","hbs");
 
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
